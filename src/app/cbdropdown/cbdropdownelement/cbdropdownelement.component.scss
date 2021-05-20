@@ -1,0 +1,20 @@
+:host input{
+    border: none;
+}
+
+:host input:focus{
+    border: none;
+    outline: none;
+}
+
+:host {
+    border: 1px solid gray;
+}
+
+:host input[type=checkbox]{
+    box-sizing: border-box;
+}
+
+:host(.input-focused) {
+    outline: 3px solid blue;
+}
