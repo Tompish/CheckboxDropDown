@@ -1,20 +1,26 @@
-:host input{
+
+:host .input{
     border: none;
+    width: 80%;
+    height: 100%;
+    outline: none;
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 1px solid gray;
 }
 
-:host input:focus{
-    border: none;
-    outline: none;
+:host(:focus), :host(:focus-within){
+    border: 2px solid purple;
 }
 
 :host {
-    border: 1px solid gray;
+    border-top: 1px solid gray;
+    display: block;
+    min-width: 50px;
 }
 
 :host input[type=checkbox]{
     box-sizing: border-box;
-}
-
-:host(.input-focused) {
-    outline: 3px solid blue;
+    margin: 3px 3px 3px 4px;
+    max-width: 20%;
 }

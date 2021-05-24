@@ -1,40 +1,27 @@
-import { AfterContentInit, Component, ContentChild, ContentChildren, ElementRef, HostBinding, HostListener, OnInit, Renderer2 } from '@angular/core';
-import { InputListenerDirective } from '../input-listener.directive';
+import { AfterViewInit, Component, HostBinding, HostListener, Input } from '@angular/core';
 
 @Component({
   selector: 'cbdropdownelement',
   templateUrl: './cbdropdownelement.component.html',
   styleUrls: ['./cbdropdownelement.component.scss']
 })
-export class CbdropdownelementComponent implements AfterContentInit {
+export class CbdropdownelementComponent implements AfterViewInit {
 
-  @ContentChild(InputListenerDirective, {static: false})
-  private inputListener!: InputListenerDirective;
+  @Input()
+  public inputValue = "";
+  @Input()
+  public checkboxValue = false;
 
-  constructor(private el: ElementRef,
-    private renderer: Renderer2) { }
+  constructor() { }
 
-  ngAfterContentInit(){
-  }
-//  @HostListener('focus')
-//  hasFocus(){
-//    console.log('I have focus');
-//  }
-
-  @HostBinding('class.input-focused')
-  get isFocused(){
-    return this.inputListener ? this.inputListener.isFocused: false;
+  ngAfterViewInit(){
   }
 
-  @HostListener('click')
-  onFocus(){
-    this.renderer.addClass(this.el.nativeElement, 'input-focused')
-  }
+  @HostBinding('tabindex') tabindex = 0;
 
-  @HostListener('blur')
-  onBlur(){
-    console.log('wtf');
-    this.renderer.removeClass(this.el.nativeElement, 'input-focus');
+  @HostListener('click', ['$event'])
+  preventSpread(event: KeyboardEvent){
+    event.stopPropagation();
   }
 
 }

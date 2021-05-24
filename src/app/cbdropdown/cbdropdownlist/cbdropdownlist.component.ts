@@ -1,6 +1,7 @@
-import { AfterContentInit, Component, ContentChildren, ElementRef, HostListener, OnInit, QueryList } from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, ElementRef, forwardRef, HostListener, Input, OnInit, QueryList } from '@angular/core';
 import { CbdropdownelementComponent } from '../cbdropdownelement/cbdropdownelement.component';
 import { ListmanagerDirective } from '../listmanager.directive';
+//import {  } '@fortawesome/fontawesome-free/svgs/solid'
 
 @Component({
   selector: 'cbdropdownlist',
@@ -9,8 +10,12 @@ import { ListmanagerDirective } from '../listmanager.directive';
 })
 export class CbdropdownlistComponent implements OnInit, AfterContentInit {
 
-  @ContentChildren(ListmanagerDirective)
+  @ContentChildren(ListmanagerDirective, {descendants: true})
   private dropdownElement!: QueryList<ListmanagerDirective>
+
+  @Input()
+  placeholder = "";
+  isFocused = false;
 
   constructor() { }
 
@@ -19,6 +24,14 @@ export class CbdropdownlistComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit(): void{
+  }
+
+  @HostListener('click')
+  private toggleFocus(): void{
+    this.isFocused = !this.isFocused;
+  }
+
+  display(){
     console.log(this.dropdownElement);
   }
 

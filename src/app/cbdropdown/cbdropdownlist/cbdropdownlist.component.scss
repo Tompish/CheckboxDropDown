@@ -1,0 +1,20 @@
+:host {
+    position: relative;
+    min-height: 20px;
+    min-width: 60px;
+    display: inline-block;
+    width: 200px;
+}
+:host div{
+    border: 1px solid gray;
+    cursor: default;
+    position: absolute;
+    background-color: white;
+    //box-shadow: 0 0 0 2px gray;
+    //outline: 1px solid gray;
+    border-radius: 3px;
+    p {
+        padding: 1px;
+        margin: 1px;
+    }
+}

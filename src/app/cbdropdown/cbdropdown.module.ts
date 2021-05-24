@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CbdropdownlistComponent } from './cbdropdownlist/cbdropdownlist.component';
 import { CbdropdownelementComponent } from './cbdropdownelement/cbdropdownelement.component';
 import { ListmanagerDirective } from './listmanager.directive';
-import { InputListenerDirective } from './input-listener.directive';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,11 +12,13 @@ import { InputListenerDirective } from './input-listener.directive';
     CbdropdownlistComponent,
     CbdropdownelementComponent,
     ListmanagerDirective,
-    InputListenerDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
   ],
-  exports: [CbdropdownlistComponent, CbdropdownelementComponent]
+  exports: [CbdropdownlistComponent,
+     CbdropdownelementComponent,
+      ListmanagerDirective]
 })
 export class CbdropdownModule { }
