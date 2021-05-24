@@ -1,6 +1,6 @@
 <div>
 <cbdropdownlist placeholder="Car brands">
-  <cbdropdownelement></cbdropdownelement>
+  <cbdropdownelement *ngFor="let item of items" [inputValue]="item"></cbdropdownelement>
   <cbdropdownelement></cbdropdownelement>
 </cbdropdownlist>
 </div>

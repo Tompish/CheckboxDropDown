@@ -3,9 +3,9 @@
     min-height: 20px;
     min-width: 60px;
     display: inline-block;
-    width: 200px;
 }
 :host div{
+    min-width: 120px;
     border: 1px solid gray;
     cursor: default;
     position: absolute;
