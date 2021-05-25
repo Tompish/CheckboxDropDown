@@ -5,6 +5,7 @@ import { ListmanagerDirective } from '../listmanager.directive';
 
 @Component({
   selector: 'cbdropdownlist',
+  host: {'class': 'ListClass'},
   templateUrl: './cbdropdownlist.component.html',
   styleUrls: ['./cbdropdownlist.component.scss']
 })
