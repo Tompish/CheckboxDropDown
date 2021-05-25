@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'checkbuttondropdown';
-  items = ['Banana', 'apple', 'suckerpunch']
+  public items = [{checked: false, value: 'Mario'},{checked: false, value: 'Luigi'},{checked: false, value: 'ZSS'}]
 }
