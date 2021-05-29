@@ -6,6 +6,7 @@
 }
 :host div{
     min-width: 120px;
+    min-height: 20px;
     border: 1px solid gray;
     cursor: default;
     position: absolute;
@@ -16,5 +17,6 @@
     p {
         padding: 1px;
         margin: 1px;
+        display: inline-block;
     }
 }
