@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CbdropdownModule } from 'checkboxddlib';
 import { AppComponent } from './app.component';
-import { CbdropdownModule } from './cbdropdown/cbdropdown.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,8 @@ import { CbdropdownModule } from './cbdropdown/cbdropdown.module';
   ],
   imports: [
     BrowserModule,
-    CbdropdownModule
+    CbdropdownModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

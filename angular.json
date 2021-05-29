@@ -1,40 +1,67 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "a7fd6e0f-341f-4d1f-b8fd-93aa035e4be2"
+    "analytics": "79b701ef-54b8-4034-8d26-f6475e22a4ea"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "checkbuttondropdown": {
+    "checkboxddlib": {
+      "projectType": "library",
+      "root": "projects/checkboxddlib",
+      "sourceRoot": "projects/checkboxddlib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/checkboxddlib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/checkboxddlib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/checkboxddlib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/checkboxddlib/src/test.ts",
+            "tsConfig": "projects/checkboxddlib/tsconfig.spec.json",
+            "karmaConfig": "projects/checkboxddlib/karma.conf.js"
+          }
+        }
+      }
+    },
+    "checkboxddtest": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        },
         "@schematics/angular:application": {
           "strict": true
         }
       },
-      "root": "",
-      "sourceRoot": "src",
+      "root": "projects/checkboxddtest",
+      "sourceRoot": "projects/checkboxddtest/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/checkbuttondropdown",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
+            "outputPath": "dist/checkboxddtest",
+            "index": "projects/checkboxddtest/src/index.html",
+            "main": "projects/checkboxddtest/src/main.ts",
+            "polyfills": "projects/checkboxddtest/src/polyfills.ts",
+            "tsConfig": "projects/checkboxddtest/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/checkboxddtest/src/favicon.ico",
+              "projects/checkboxddtest/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "projects/checkboxddtest/src/styles.css"
             ],
             "scripts": []
           },
@@ -54,8 +81,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "projects/checkboxddtest/src/environments/environment.ts",
+                  "with": "projects/checkboxddtest/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -75,10 +102,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "checkbuttondropdown:build:production"
+              "browserTarget": "checkboxddtest:build:production"
             },
             "development": {
-              "browserTarget": "checkbuttondropdown:build:development"
+              "browserTarget": "checkboxddtest:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,23 +113,22 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "checkbuttondropdown:build"
+            "browserTarget": "checkboxddtest:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "inlineStyleLanguage": "scss",
+            "main": "projects/checkboxddtest/src/test.ts",
+            "polyfills": "projects/checkboxddtest/src/polyfills.ts",
+            "tsConfig": "projects/checkboxddtest/tsconfig.spec.json",
+            "karmaConfig": "projects/checkboxddtest/karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/checkboxddtest/src/favicon.ico",
+              "projects/checkboxddtest/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "projects/checkboxddtest/src/styles.css"
             ],
             "scripts": []
           }
@@ -110,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "checkbuttondropdown"
+  "defaultProject": "checkboxddlib"
 }

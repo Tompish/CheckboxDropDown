@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'checkbuttondropdown';
-  items = ['Banana', 'apple', 'suckerpunch']
+  title = 'checkboxddtest';
+  ssbu = [{checked: true, value: "CSS"}, { checked: false, value: "Bowser"}]
 }
