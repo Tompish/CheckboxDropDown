@@ -1,23 +1,8 @@
-
-:host .input{
-    border: none;
-    width: 80%;
-    height: 100%;
-    outline: none;
-    margin: 0px;
-    padding: 0px;
-    border-bottom: 1px solid gray;
-}
-
-:host(:focus), :host(:focus-within){
-    border: 2px solid purple;
-}
-
-
 :host {
     border: 1px solid gray;
     display: inline-block;
     min-width: 30px;
+    border-radius: 3px;
 }
 
 :host-context(.ListClass){
@@ -27,10 +12,24 @@
     border-right: none;
     display: block;
     min-width: 50px;
+    border-radius: 0;
+}
+
+:host .input{
+    border: none;
+    width: 80%;
+    height: 100%;
+    outline: none;
+    margin: 0px;
+    padding: 0px;
 }
 
 :host input[type=checkbox]{
     box-sizing: border-box;
     margin: 3px 3px 3px 4px;
     max-width: 20%;
+}
+
+:host(:focus), :host(:focus-within){
+    border: 2px solid blue;
 }

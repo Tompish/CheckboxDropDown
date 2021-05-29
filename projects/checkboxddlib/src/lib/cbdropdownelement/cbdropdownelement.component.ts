@@ -11,18 +11,18 @@ export class CbdropdownelementComponent implements ControlValueAccessor {
 
   @Input()
   public placeholder = "";
+  @Input('value')
+  public inputValue = "";
   
   private _onChange = (_: any)=>{}
   private _onTouch = ()=>{}
   private _value: {checked: boolean, value: string} = {checked: false, value: ''};
 
   get checked(){
-    console.log("From checked: ", this._value.checked);
     return this._value.checked;
   }
 
   set checked(value: any){
-    console.log("From setCheck", value);
     this._value.checked = value;// == 'on'? true: false;
   }
 
@@ -31,7 +31,6 @@ export class CbdropdownelementComponent implements ControlValueAccessor {
   }
 
   set value(value: string){
-    console.log("from setvalue", value);
     this._value.value = value;
   }
 
@@ -60,22 +59,18 @@ export class CbdropdownelementComponent implements ControlValueAccessor {
 
 
   writeValue(value: any){
-    console.log("does it get here?");
+    console.log("From writeValue", value);
     if(typeof(value)=='object' && value != null){
-      console.log("From object", value)
       this._value = value;
     }
     else{
       if(value == null){
-        console.log("From null", value);
         this._value.checked = false;
       }
       else if(value == 'on'){
-        console.log("From on", value);
         this._value.checked = true;
       }
       else{
-        console.log("From else", value);
         this._value.value = value;
       }
     }
