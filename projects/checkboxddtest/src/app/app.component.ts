@@ -11,7 +11,7 @@ export class AppComponent {
   ssbu: CheckboxInputData[];
   item: CheckboxInputData;
   constructor(){
-    this.ssbu = [{checked: false, value: 'Diddy Kong zzzzzzzzzz'}, {checked: true, value: 'Sephirot'}];
+    this.ssbu = [{checked: false, value: 'Diddy kong'}, {checked: true, value: 'Sephirot'}];
 
     this.item = {checked: false, value: "Zss"};
   }
