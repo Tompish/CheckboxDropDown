@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CbdropdownlistComponent } from './cbdropdownlist.component';
+import { CbiDropdown } from './cbidropdown.component';
 
 describe('CbdropdownlistComponent', () => {
-  let component: CbdropdownlistComponent;
-  let fixture: ComponentFixture<CbdropdownlistComponent>;
+  let component: CbiDropdown;
+  let fixture: ComponentFixture<CbiDropdown>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CbdropdownlistComponent ]
+      declarations: [ CbiDropdown ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CbdropdownlistComponent);
+    fixture = TestBed.createComponent(CbiDropdown);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

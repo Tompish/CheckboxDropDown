@@ -1,27 +1,30 @@
 # Checkboxddlib
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
+A lightweight library which provides a custom input that contains both a checkbox and a text input. The checkboxInput can be used as a standalone component or in conjuction with the provided dropdown component.
 
-## Development server
+![DemoImage]
+(https://github.com/Tompish/CheckboxDropDown/projects/checkboxddtest/src/assets/cbiDemo.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Install
 
-## Code scaffolding
+Not yet published to NPM.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage
 
-## Build
+Import CheckboxInputModule into the appModule. 
+Create a variable of the type CheckboxInputData in the .ts file.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+`favouriteChar: CheckboxInputData = {checked: true, value: 'ZSS'};`
 
-## Running unit tests
+Add the element in the html file and use ngModel to bind the data.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`<checkboxinput [(ngModel)]="favouriteChar"></checkboxinput>`
 
-## Running end-to-end tests
+Make a dropdown by changing the typescript variable to an array and changing the html code to:
+```<cbidropdown title="My Characters">
+    <checkboxinput *ngFor="let myChar of arrayOfChars; let i=index" [(ngModel)]="arrayOfChars[i]"></checkboxinput>
+</cbidropdown>
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Improvements
+Feel free to post improvements or issues on the github page. 

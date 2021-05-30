@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CheckboxInputData } from 'checkboxddlib'
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'checkboxddtest';
-  ssbu = [{checked: true, value: "CSS"}, { checked: false, value: "Bowser"}]
+  ssbu: CheckboxInputData[];
+  item: CheckboxInputData;
+  constructor(){
+    this.ssbu = [{checked: false, value: 'Diddy kong'}, {checked: true, value: 'Sephirot'}];
+
+    this.item = {checked: false, value: "Zss"};
+  }
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { CbdropdownModule } from 'checkboxddlib';
+import { CheckboxInputModule } from 'projects/checkboxddlib/src/public-api';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    CbdropdownModule,
+    CheckboxInputModule,
     FormsModule
   ],
   providers: [],

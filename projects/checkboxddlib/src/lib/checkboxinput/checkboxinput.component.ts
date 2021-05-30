@@ -1,13 +1,14 @@
 import { Component, forwardRef, HostBinding, HostListener, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { CheckboxInputData } from '../checkboxinputdata';
 
 @Component({
-  selector: 'cbdropdownelement',
-  templateUrl: './cbdropdownelement.component.html',
-  styleUrls: ['./cbdropdownelement.component.scss'],
-  providers: [{provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(()=>CbdropdownelementComponent), multi: true}]
+  selector: 'checkboxinput',
+  templateUrl: './checkboxinput.component.html',
+  styleUrls: ['./checkboxinput.component.scss'],
+  providers: [{provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(()=>CheckboxInput), multi: true}]
 })
-export class CbdropdownelementComponent implements ControlValueAccessor {
+export class CheckboxInput implements ControlValueAccessor {
 
   @Input()
   public placeholder = "";
@@ -16,7 +17,7 @@ export class CbdropdownelementComponent implements ControlValueAccessor {
   
   private _onChange = (_: any)=>{}
   private _onTouch = ()=>{}
-  private _value: {checked: boolean, value: string} = {checked: false, value: ''};
+  private _value: CheckboxInputData = {checked: false, value: ''};
 
   get checked(){
     return this._value.checked;
@@ -45,7 +46,6 @@ export class CbdropdownelementComponent implements ControlValueAccessor {
 
   @HostListener('blur')
   updateValue(){
-    console.log("From blur: ", this._value);
     this._onChange(this._value);
   }
 
@@ -59,7 +59,6 @@ export class CbdropdownelementComponent implements ControlValueAccessor {
 
 
   writeValue(value: any){
-    console.log("From writeValue", value);
     if(typeof(value)=='object' && value != null){
       this._value = value;
     }

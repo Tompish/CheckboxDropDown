@@ -1,3 +1,8 @@
-<cbdropdownlist placeholder="hello">
-  <cbdropdownelement *ngFor="let ssb of ssbu; let i=index" [(ngModel)]="ssbu[i]"></cbdropdownelement>
-</cbdropdownlist>
+<h2>Checkbox input dropdown demo</h2>
+<cbidropdown title="SSBU characters">
+  <checkboxinput *ngFor="let ssb of ssbu; let i=index" [(ngModel)]="ssbu[i]"></checkboxinput>
+</cbidropdown>
+
+<div style="margin-top: 100px;">
+  <checkboxinput [(ngModel)]="item"></checkboxinput>
+</div>
