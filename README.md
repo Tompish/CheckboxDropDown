@@ -1,12 +1,12 @@
 # Checkboxddlib
 
-A lightweight library which provides a custom input that contains both a checkbox and a text input. The checkboxInput can be used as a standalone component or in conjuction with the provided dropdown component.
+A lightweight angular library which provides a custom input that contains both a checkbox and a text input. The checkboxInput can be used as a standalone component or in conjuction with the provided dropdown component.
 
 ![DemoImage](https://github.com/Tompish/CheckboxDropDown/blob/main/projects/checkboxddtest/src/assets/cbiDemo.png)
 
 ## Install
 
-Not yet published to NPM.
+`npm i @tompish/checkboxddlib@latest`
 
 ## Usage
 
