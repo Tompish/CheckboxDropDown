@@ -20,7 +20,8 @@ Add the element in the html file and use ngModel to bind the data.
 `<checkboxinput [(ngModel)]="favouriteChar"></checkboxinput>`
 
 Make a dropdown by changing the typescript variable to an array and changing the html code to:
-```<cbidropdown title="My Characters">
+```
+<cbidropdown title="My Characters">
     <checkboxinput *ngFor="let myChar of arrayOfChars; let i=index" [(ngModel)]="arrayOfChars[i]"></checkboxinput>
 </cbidropdown>
 ```
